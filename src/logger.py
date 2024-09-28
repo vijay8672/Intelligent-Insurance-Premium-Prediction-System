@@ -2,7 +2,7 @@ import logging
 import os
 from datetime import datetime
 
-# Specify logs directory at the root level
+# Specifying logs directory at the root level
 logs_dir = os.path.join("C:\\ML Projects", "logs")
 os.makedirs(logs_dir, exist_ok=True)
 
