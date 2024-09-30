@@ -8,14 +8,12 @@ from dataclasses import dataclass
 from src.utils import save_object
 import numpy as np
 import pandas as pd
-
-import dill
-import sys
 import os
+import sys
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_filepath = os.path.join('artifacts', 'preprocessor.pkl')
+    preprocessor_obj_filepath: str = os.path.join('artifacts', 'preprocessor.pkl')
 
 class DataTransformation:
     def __init__(self):
@@ -34,18 +32,16 @@ class DataTransformation:
                     ("scaler", StandardScaler())
                 ]
             )
-
-            logging.info("Numerical columns Standard Scaling completed")
+            logging.info("Numerical columns standard scaling completed")
 
             # Categorical pipeline
             categorical_pipeline = Pipeline(
                 steps=[
                     ("imputer", SimpleImputer(strategy="most_frequent")),
                     ("onehotencoder", OneHotEncoder()),
-                    ("scaler", StandardScaler(with_mean=False))  # Updated here
+                    ("scaler", StandardScaler(with_mean=False))
                 ]
             )
-
             logging.info("Categorical columns encoding completed")
 
             # Column transformer
@@ -65,12 +61,9 @@ class DataTransformation:
         try:
             train_df = pd.read_csv(train_path)  # type: ignore
             test_df = pd.read_csv(test_path)    # type: ignore
-
             logging.info("Reading train and test data completed")
-            logging.info("Obtaining preprocessing object")
 
             preprocessing_obj = self.data_transformation_obj()
-
             target_column_name = "charges"
 
             input_feature_train_df = train_df.drop(columns=[target_column_name], axis=1)
@@ -79,22 +72,24 @@ class DataTransformation:
             input_feature_test_df = test_df.drop(columns=[target_column_name], axis=1)
             target_feature_test_df = test_df[target_column_name]
 
-            logging.info("Applying preprocessing object on training dataframe and test dataframe")
+            logging.info("Applying preprocessing object on training and test dataframes")
 
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)  
+            input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
+            # Combine features and target into a single array
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
-            logging.info("Saved preprocessing object")
-
+            logging.info("Saving preprocessing object")
             save_object(
                 file_path=self.data_transformation_config.preprocessor_obj_filepath,
                 obj=preprocessing_obj
             )
 
+            logging.info("Data transformation completed successfully.")
             return (train_arr, test_arr, self.data_transformation_config.preprocessor_obj_filepath)
 
         except Exception as e:
+            logging.error("An error occurred during data transformation", exc_info=True)
             raise CustomException(e, sys)
