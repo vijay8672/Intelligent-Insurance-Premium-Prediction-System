@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Price Prediction</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Insurance Price Prediction</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <legend>Insurance Price Prediction</legend>
+
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="sex" required>
+                    <option class="placeholder" selected disabled value="">Select your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Region</label>
+                <select class="form-control" name="region" required>
+                    <option class="placeholder" selected disabled value="">Select region</option>
+                    <option value="southeast">Southeast</option>
+                    <option value="southwest">Southwest</option>
+                    <option value="northeast">Northeast</option>
+                    <option value="northwest">Northwest</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Smoker</label>
+                <select class="form-control" name="smoker" required>
+                    <option class="placeholder" selected disabled value="">Select whether you are a smoker</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Age (0-100)</label>
+                <input class="form-control" type="number" name="age" placeholder="Enter your Age" min="0" max="100" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">BMI (0.00 - 100.00)</label>
+                <input class="form-control" type="number" name="bmi" placeholder="Enter your BMI" min="0" max="100" step="0.01" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Number of Children</label>
+                <input class="form-control" type="number" name="children" placeholder="Enter the number of children you have" min="0" max="10" required />
+            </div>
+
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict your Insurance Price" />
+            </div>
+        </form>
+
+        <h2>Total Insurance Price : {{ results }}</h2>
+    </div>
+</body>
+</html>

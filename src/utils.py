@@ -1,22 +1,13 @@
 import os
 import sys
-import pandas as pd
-import numpy as np
 import pickle
 import dill
-from sklearn.metrics import r2_score
 from src.exception import CustomException
 from src.logger import logging
+from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
 
 def save_object(file_path, obj):
-    """
-    Saves an object to a specified file path using dill for serialization.
-    
-    Parameters:
-    - file_path (str): The path where the object will be saved.
-    - obj: The object to be saved.
-    """
     try:
         dir_path = os.path.dirname(file_path)
         os.makedirs(dir_path, exist_ok=True)
@@ -29,34 +20,26 @@ def save_object(file_path, obj):
         logging.error(f"Error saving object: {str(e)}")
         raise CustomException(e, sys)
 
-def evaluate_models(X_train, y_train, X_test, y_test, models, param):
-    """
-    Evaluates multiple models using GridSearchCV for hyperparameter tuning.
-    
-    Parameters:
-    - X_train (ndarray): Training features.
-    - y_train (ndarray): Training labels.
-    - X_test (ndarray): Testing features.
-    - y_test (ndarray): Testing labels.
-    - models (dict): Dictionary of models to evaluate.
-    - param (dict): Dictionary of hyperparameters for each model.
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return pickle.load(file_obj)
+    except Exception as e:
+        raise CustomException(e, sys)
 
-    Returns:
-    - report (dict): A dictionary containing test R² scores for each model.
-    """
+def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     report = {}
 
     for model_name, model in models.items():
         try:
             para = param[model_name]
-
             logging.info(f"Evaluating model: {model_name}")
 
             gs = GridSearchCV(model, para, cv=3)
             gs.fit(X_train, y_train)
 
             model.set_params(**gs.best_params_)
-            model.fit(X_train, y_train)  # Training the model
+            model.fit(X_train, y_train)
 
             y_train_pred = model.predict(X_train)
             y_test_pred = model.predict(X_test)
