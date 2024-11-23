@@ -86,35 +86,8 @@ Developed a Flask-based web application to make the predictive model accessible 
 
 ### Repository Structure
 
-Insurance-Premium-Prediction/
+![image](https://github.com/user-attachments/assets/18b803f3-a8a1-4600-b48a-007eaa609398)
 
-│
-
-├── data/
-
-│   ├── insurance.csv        # Dataset file
-
-│
-
-├── notebooks/
-
-│   ├── eda.ipynb            # Exploratory Data Analysis
-
-│   ├── model_training.ipynb # Model Building and Evaluation
-
-│
-
-├── app/
-
-│   ├── app.py               # Flask Application
-
-│   ├── templates/           # HTML Templates for the web app
-
-│
-
-├── requirements.txt         # Required Python libraries
-
-├── README.md                # Project Documentation"""
 
 
 ### Key Takeaways
