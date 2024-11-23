@@ -9,11 +9,17 @@ We utilized the Medical Cost Personal Dataset, which contains features related t
 📂 Dataset Features:
 
 Age: Age of the customer.
+
 BMI: Body Mass Index, an indicator of body fat based on height and weight.
+
 Children: Number of dependents covered under the insurance.
+
 Smoker: Whether the customer is a smoker or not (categorical: yes/no).
+
 Region: Geographical region of the customer (categorical: northeast, northwest, etc.).
+
 Charges: Insurance premium paid (target variable).
+
 You can access the dataset from Kaggle: https://www.kaggle.com/datasets/mirichoi0218/insurance
 
 ### Data Preprocessing
