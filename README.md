@@ -50,10 +50,15 @@ Visualized the distribution of premium amounts using histograms.
 
 
 ### Model Building
+
 Selected Machine Learning Models:
+
 Linear Regression: A simple baseline model for understanding linear relationships.
+
 Decision Tree Regressor: Captures non-linear interactions between features.
+
 Random Forest Regressor: An ensemble method for reducing variance and improving accuracy.
+
 XGBoost Regressor: A high-performing, gradient-boosting model for complex datasets.
 
 
@@ -68,18 +73,28 @@ Trained each regression model using the training dataset.
 Monitored training loss to avoid overfitting.
 
 3. Evaluation Metrics:
+
 Evaluated model performance using:
+
 Mean Absolute Error (MAE): Measures average absolute error.
+
 Mean Squared Error (MSE): Penalizes large errors more heavily.
+
 R-Squared (R²): Explains the proportion of variance in the target variable accounted for by the features.
 
 
 ### Hyperparameter Tuning
+
 Optimization Techniques:
+
 • Applied Grid Search to fine-tune hyperparameters for models like Random Forest and XGBoost.
+
 • Improved model accuracy by optimizing parameters such as:
+
 • Number of estimators.
+
 • Maximum depth.
+
 • Learning rate.
 
 
@@ -126,6 +141,7 @@ Developed a Flask-based web application to make the predictive model accessible 
 
 3. Integration:
    Enable the model to integrate with third-party insurance APIs for seamless deployment in business applications.
+
 ### Conclusion
 
 This project demonstrates a robust machine-learning pipeline for predicting insurance premiums. By combining data preprocessing, exploratory analysis, model optimization, and deployment, we successfully developed a predictive tool that offers significant value for insurers and customers alike.
