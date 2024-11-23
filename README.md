@@ -38,7 +38,9 @@ Applied StandardScaler to variables such as age, bmi, and charges.
 
 ### Exploratory Data Analysis (EDA)
 __Insights and Visualizations:__
+
 Feature Relationships:
+
 Explored correlations between features and the target variable using heatmaps.Observed significant impact of smoker, bmi, and age on charges.
 
 __Visualizations:__
