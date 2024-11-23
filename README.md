@@ -115,8 +115,10 @@ Developed a Flask-based web application to make the predictive model accessible 
 
 ### Key Takeaways
 
-• Achieved an R² score of 90% using XGBoost, outperforming other models.
+• Achieved an R² score of 86.9% using XGBoost, outperforming other models.
+
 • Integrated the model into a Flask web application, making it user-friendly and ready for real-world use.
+
 • Gained actionable insights into how customer features such as smoking habits and BMI influence premium costs.
 
 
