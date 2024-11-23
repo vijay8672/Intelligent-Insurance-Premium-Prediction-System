@@ -131,6 +131,11 @@ Developed a Flask-based web application to make the predictive model accessible 
 
 • Deployment: Flask Server
 
+### User Interface and Model Prediction
+
+![image](https://github.com/user-attachments/assets/1fd0b4e3-49f0-4ec4-a81d-7831fb1e7cb1)
+
+
 
 ### Future Enhancements
 1. Cloud Deployment:
