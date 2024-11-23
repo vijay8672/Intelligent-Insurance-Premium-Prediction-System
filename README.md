@@ -99,9 +99,16 @@ Developed a Flask-based web application to make the predictive model accessible 
 
 ### Technologies Used
 • Languages: Python
+
 • Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost, Flask
+
 • Tools: Jupyter Notebooks, Visual Studio Code
-• Environment: Local Deployment, Flask Server
+
+• Environment: Local virtual environment
+
+• Deployment: Flask Server
+
+
 ### Future Enhancements
 1. Cloud Deployment:
    Host the web application using AWS, Azure, or Heroku for global access.
