@@ -4,7 +4,7 @@
 ### Project Overview
 This project focuses on predicting insurance premiums based on customer data using supervised machine learning regression techniques. The target variable, charges (insurance premium), is continuous, making regression the ideal approach. By leveraging data analysis and predictive modeling, this project aims to provide a reliable and efficient system to estimate insurance premiums.
 
-Dataset: 
+### Dataset: 
 We utilized the Medical Cost Personal Dataset, which contains features related to customer demographics, lifestyle, and health.
 📂 Dataset Features:
 
@@ -52,7 +52,7 @@ XGBoost Regressor: A high-performing, gradient-boosting model for complex datase
 ### Model Training and Evaluation
 Process Followed:
 1. Data Splitting:
-Divided the dataset into 80% training data and 20% testing data to evaluate model generalization.
+Divided the dataset into 70% training data and 30% testing data to evaluate model generalization.
 
 
 2. Model Training:
