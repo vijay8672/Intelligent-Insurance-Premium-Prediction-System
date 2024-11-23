@@ -86,7 +86,7 @@ Developed a Flask-based web application to make the predictive model accessible 
 
 ### Repository Structure
 
-Insurance-Premium-Prediction/
+"""Insurance-Premium-Prediction/
 │
 ├── data/
 │   ├── insurance.csv        # Dataset file
@@ -100,7 +100,7 @@ Insurance-Premium-Prediction/
 │   ├── templates/           # HTML Templates for the web app
 │
 ├── requirements.txt         # Required Python libraries
-├── README.md                # Project Documentation
+├── README.md                # Project Documentation"""
 
 
 ### Key Takeaways
