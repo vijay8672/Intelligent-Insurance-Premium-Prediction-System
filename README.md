@@ -149,6 +149,18 @@ Developed a Flask-based web application to make the predictive model accessible 
 3. Integration:
    Enable the model to integrate with third-party insurance APIs for seamless deployment in business applications.
 
+### Project Outcome
+
+1. Accuracy: Achieved 86.9% R² score with XGBoost, ensuring reliable premium predictions.
+
+2. Efficiency: Reduced manual workload with a Flask-based app for real-time predictions.
+
+3. Business Impact: Delivered actionable insights on key factors like smoking status (+150% premium), BMI (+30% premium), and age (+20% premium).
+
+4. Scalability: Established an end-to-end ML pipeline ready for cloud deployment and API integration.
+
+5. User Benefits: Improved risk assessment and customized pricing for insurers, enhancing decision-making and customer experience.
+
 ### Conclusion
 
 This project demonstrates a robust machine-learning pipeline for predicting insurance premiums. By combining data preprocessing, exploratory analysis, model optimization, and deployment, we successfully developed a predictive tool that offers significant value for insurers and customers alike.
