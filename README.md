@@ -6,6 +6,7 @@ This project focuses on predicting insurance premiums based on customer data usi
 
 ### Dataset: 
 We utilized the Medical Cost Personal Dataset, which contains features related to customer demographics, lifestyle, and health.
+
 📂 Dataset Features:
 
 Age: Age of the customer.
